@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import ru.otus.hw.dao.QuestionDao;
 import ru.otus.hw.domain.Answer;
 import ru.otus.hw.domain.Question;
-import ru.otus.hw.exceptions.QuestionReadException;
 
 import java.util.List;
 
@@ -21,20 +20,15 @@ public class TestServiceImpl implements TestService {
         ioService.printFormattedLine("Please answer the questions below%n");
         // Получить вопросы из дао и вывести их с вариантами ответов
         List<Question> questionList = questionDao.findAll();
-        printQustions(questionList);
+        printQuestions(questionList);
     }
 
-    private void printQustions(List<Question> questionList) {
-        try {
-            for (Question question: questionList) {
-                ioService.printLine(question.text());
-                for (Answer answer: question.answers()) {
-                    ioService.printFormattedLine("- %s", answer.text());
-                }
+    private void printQuestions(List<Question> questionList) {
+        for (Question question: questionList) {
+            ioService.printLine(question.text());
+            for (Answer answer: question.answers()) {
+                ioService.printFormattedLine("- %s", answer.text());
             }
-        } catch (NullPointerException e) {
-            throw new QuestionReadException(e.getMessage(), e);
         }
-
     }
 }
