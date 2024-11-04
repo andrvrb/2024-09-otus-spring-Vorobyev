@@ -1,0 +1,7 @@
+# Добавить сюда своих вопросов. Эту строку надо пропустить при настройке CsvToBean (withSkipLines)
+What is a class in Java?;The complexity level of a program. All operators are divided into classes depending on the complexity of their use.%false|The basic element of object-oriented programming in Java.%true|Just one of the possible names of a variable.%false|This concept exists only in C++, there is no such concept in Java.%false
+How to declare a class in code?;class MyClass%true|new class MyClass%false|select * from class MyClass%false|MyClass extends class%false
+The built-in base class in Java, which is used to handle all exceptions is?;Raise%false|Exception%false|Error%false|Throwable%true
+Is there life on Mars?;Science doesn't know this yet%true|Certainly. The red UFO is from Mars. And green is from Venus%false|Absolutely not%false
+How should resources be loaded form jar in Java?;ClassLoader#geResourceAsStream or ClassPathResource#getInputStream%true|ClassLoader#geResource#getFile + FileReader%false|Wingardium Leviosa%false
+Which option is a good way to handle the exception?;@SneakyThrow%false|e.printStackTrace()%false|Rethrow with wrapping in business exception (for example, QuestionReadException)%true|Ignoring exception%false
